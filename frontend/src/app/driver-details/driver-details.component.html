@@ -1,0 +1,28 @@
+<p>driver-details works!</p>
+
+<div class="container">
+<input type="text" style="border-block-width:px;" placeholder="Search here">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone No</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let driver of driverdetails">
+        <th scope="row">{{driver.ID}}</th>
+        
+        <td>{{driver.name}}</td>
+        <td>{{driver.phone_no}}</td>
+        <td><button type="button" class="btn btn-info" style=" margin-left: 600px; margin-right: 20px;" [routerLink]="['/update_driver',driver.ID]">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deleteDriver(driver.ID)">Delete</button></td> 
+      </tr>
+      
+    </tbody>
+</table>
+</div>
+<router-outlet></router-outlet>
